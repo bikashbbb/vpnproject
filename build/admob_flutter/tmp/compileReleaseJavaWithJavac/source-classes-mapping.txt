@@ -1,0 +1,2 @@
+com/shatsy/admobflutter/BuildConfig.java
+ com.shatsy.admobflutter.BuildConfig

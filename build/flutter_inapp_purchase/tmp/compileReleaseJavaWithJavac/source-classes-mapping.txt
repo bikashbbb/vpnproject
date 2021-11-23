@@ -1,0 +1,19 @@
+com/dooboolab/flutterinapppurchase/AndroidInappPurchasePlugin.java
+ com.dooboolab.flutterinapppurchase.AndroidInappPurchasePlugin
+ com.dooboolab.flutterinapppurchase.AndroidInappPurchasePlugin$1
+ com.dooboolab.flutterinapppurchase.AndroidInappPurchasePlugin$2
+ com.dooboolab.flutterinapppurchase.AndroidInappPurchasePlugin$3
+ com.dooboolab.flutterinapppurchase.AndroidInappPurchasePlugin$4
+ com.dooboolab.flutterinapppurchase.AndroidInappPurchasePlugin$5
+ com.dooboolab.flutterinapppurchase.AndroidInappPurchasePlugin$6
+ com.dooboolab.flutterinapppurchase.AndroidInappPurchasePlugin$7
+com/dooboolab/flutterinapppurchase/DoobooUtils.java
+ com.dooboolab.flutterinapppurchase.DoobooUtils
+com/dooboolab/flutterinapppurchase/AmazonInappPurchasePlugin.java
+ com.dooboolab.flutterinapppurchase.AmazonInappPurchasePlugin
+ com.dooboolab.flutterinapppurchase.AmazonInappPurchasePlugin$1
+ com.dooboolab.flutterinapppurchase.AmazonInappPurchasePlugin$2
+com/dooboolab/flutterinapppurchase/BuildConfig.java
+ com.dooboolab.flutterinapppurchase.BuildConfig
+com/dooboolab/flutterinapppurchase/FlutterInappPurchasePlugin.java
+ com.dooboolab.flutterinapppurchase.FlutterInappPurchasePlugin

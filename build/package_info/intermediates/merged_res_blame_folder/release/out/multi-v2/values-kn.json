@@ -1,0 +1,34 @@
+{
+    "logs": [
+        {
+            "outputFile": "/media/asus/project disck/downloads/files/build/package_info/intermediates/res/merged/release/values-kn/values-kn.xml",
+            "map": [
+                {
+                    "source": "/home/asus/.gradle/caches/transforms-2/files-2.1/16960d4811de2f02a031adda5b9f8058/core-1.1.0/res/values-kn/values-kn.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/media/asus/project disck/downloads/files/build/package_info/intermediates/incremental/mergeReleaseResources/merged.dir/values-kn/values-kn.xml",
+            "map": [
+                {
+                    "source": "/home/asus/.gradle/caches/transforms-2/files-2.1/16960d4811de2f02a031adda5b9f8058/core-1.1.0/res/values-kn/values-kn.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        }
+    ]
+}

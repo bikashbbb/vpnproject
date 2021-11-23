@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/media/asus/project disck/downloads/files/build/in_app_review/intermediates/res/merged/release/layout-v21/notification_action_tombstone.xml",
+        "source": "/home/asus/.gradle/caches/transforms-2/files-2.1/16960d4811de2f02a031adda5b9f8058/core-1.1.0/res/layout-v21/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "/media/asus/project disck/downloads/files/build/in_app_review/intermediates/res/merged/release/layout-v21/notification_template_icon_group.xml",
+        "source": "/home/asus/.gradle/caches/transforms-2/files-2.1/16960d4811de2f02a031adda5b9f8058/core-1.1.0/res/layout-v21/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "/media/asus/project disck/downloads/files/build/in_app_review/intermediates/res/merged/release/layout-v21/notification_action.xml",
+        "source": "/home/asus/.gradle/caches/transforms-2/files-2.1/16960d4811de2f02a031adda5b9f8058/core-1.1.0/res/layout-v21/notification_action.xml"
+    },
+    {
+        "merged": "/media/asus/project disck/downloads/files/build/in_app_review/intermediates/res/merged/release/layout-v21/notification_template_custom_big.xml",
+        "source": "/home/asus/.gradle/caches/transforms-2/files-2.1/16960d4811de2f02a031adda5b9f8058/core-1.1.0/res/layout-v21/notification_template_custom_big.xml"
+    }
+]

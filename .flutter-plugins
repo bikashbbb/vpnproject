@@ -1,0 +1,24 @@
+# This is a generated file; do not edit or check into version control.
+admob_flutter=/host/SDKS/flutter/.pub-cache/hosted/pub.dartlang.org/admob_flutter-2.0.0-nullsafety.1/
+device_apps=/host/SDKS/flutter/.pub-cache/hosted/pub.dartlang.org/device_apps-2.1.1/
+device_info=/host/SDKS/flutter/.pub-cache/hosted/pub.dartlang.org/device_info-2.0.2/
+flutter_inapp_purchase=/host/SDKS/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_inapp_purchase-5.0.3/
+in_app_review=/host/SDKS/flutter/.pub-cache/hosted/pub.dartlang.org/in_app_review-2.0.3/
+in_app_update=/host/SDKS/flutter/.pub-cache/hosted/pub.dartlang.org/in_app_update-2.0.0/
+package_info=/host/SDKS/flutter/.pub-cache/hosted/pub.dartlang.org/package_info-2.0.2/
+path_provider=/host/SDKS/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider-2.0.5/
+path_provider_linux=/host/SDKS/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_linux-2.1.0/
+path_provider_macos=/host/SDKS/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_macos-2.0.2/
+path_provider_windows=/host/SDKS/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_windows-2.0.3/
+share=/host/SDKS/flutter/.pub-cache/hosted/pub.dartlang.org/share-2.0.4/
+shared_preferences=/host/SDKS/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences-2.0.8/
+shared_preferences_linux=/host/SDKS/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences_linux-2.0.2/
+shared_preferences_macos=/host/SDKS/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences_macos-2.0.2/
+shared_preferences_web=/host/SDKS/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences_web-2.0.2/
+shared_preferences_windows=/host/SDKS/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences_windows-2.0.2/
+sqflite=/host/SDKS/flutter/.pub-cache/hosted/pub.dartlang.org/sqflite-2.0.0+4/
+url_launcher=/host/SDKS/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher-6.0.12/
+url_launcher_linux=/host/SDKS/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_linux-2.0.2/
+url_launcher_macos=/host/SDKS/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_macos-2.0.2/
+url_launcher_web=/host/SDKS/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_web-2.0.4/
+url_launcher_windows=/host/SDKS/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_windows-2.0.2/

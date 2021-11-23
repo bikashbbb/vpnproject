@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">782923539677-hnq1cm149o4cll6shd12ipfj5mmpib0i.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">782923539677</string>
+    <string name="google_api_key" translatable="false">AIzaSyBU49KDwb3p5AzZIKNO4kQUOffTdqNX6WE</string>
+    <string name="google_app_id" translatable="false">1:782923539677:android:7feef138fbeebf505a6734</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBU49KDwb3p5AzZIKNO4kQUOffTdqNX6WE</string>
+    <string name="google_storage_bucket" translatable="false">gvpn-e9826.appspot.com</string>
+    <string name="project_id" translatable="false">gvpn-e9826</string>
+</resources>

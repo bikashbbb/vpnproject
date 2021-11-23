@@ -1,0 +1,363 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.gstudio.vpn"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="19"
+8-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="30" />
+9-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml:6:5-67
+11-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml:6:22-64
+12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+12-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml:7:5-79
+12-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml:7:22-76
+13    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+13-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml:8:5-77
+13-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml:8:22-74
+14    <uses-permission android:name="android.permission.WAKE_LOCK" />
+14-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml:9:5-68
+14-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml:9:22-65
+15    <uses-permission android:name="com.android.vending.BILLING" />
+15-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml:10:5-67
+15-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml:10:22-64
+16
+17    <uses-feature
+17-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml:12:5-87
+18        android:name="android.software.leanback"
+18-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml:12:19-59
+19        android:required="false" />
+19-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml:12:60-84
+20
+21    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+21-->[com.google.android.gms:play-services-measurement:17.2.2] /home/asus/.gradle/caches/transforms-2/files-2.1/2070b7ef4f65113fb3e299fc070b5115/jetified-play-services-measurement-17.2.2/AndroidManifest.xml:26:5-110
+21-->[com.google.android.gms:play-services-measurement:17.2.2] /home/asus/.gradle/caches/transforms-2/files-2.1/2070b7ef4f65113fb3e299fc070b5115/jetified-play-services-measurement-17.2.2/AndroidManifest.xml:26:22-107
+22    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+22-->[com.google.firebase:firebase-iid:20.0.2] /home/asus/.gradle/caches/transforms-2/files-2.1/9821ac914ea42f262d2c2ea854857fd2/jetified-firebase-iid-20.0.2/AndroidManifest.xml:26:5-82
+22-->[com.google.firebase:firebase-iid:20.0.2] /home/asus/.gradle/caches/transforms-2/files-2.1/9821ac914ea42f262d2c2ea854857fd2/jetified-firebase-iid-20.0.2/AndroidManifest.xml:26:22-79
+23
+24    <application
+24-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml:14:5-65:19
+25        android:name="io.flutter.app.FlutterApplication"
+25-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml:15:9-57
+26        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+26-->[androidx.core:core:1.5.0] /home/asus/.gradle/caches/transforms-2/files-2.1/ab5f2bfc5a2f4cbe6a2793b662b61a27/core-1.5.0/AndroidManifest.xml:24:18-86
+27        android:icon="@mipmap/launcher_icon"
+27-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml:16:9-45
+28        android:label="G-VPN"
+28-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml:17:9-30
+29        android:usesCleartextTraffic="true" >
+29-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml:18:9-44
+30
+31        <!-- Ad App ID -->
+32        <meta-data
+32-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml:22:9-24:70
+33            android:name="com.google.android.gms.ads.APPLICATION_ID"
+33-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml:23:13-69
+34            android:value="ca-app-pub-5312260568070725~7436473441" />
+34-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml:24:13-67
+35
+36        <activity
+36-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml:27:9-47:20
+37            android:name="com.gstudio.vpn.MainActivity"
+37-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml:28:13-56
+38            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+38-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml:29:13-163
+39            android:hardwareAccelerated="true"
+39-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml:30:13-47
+40            android:launchMode="singleTop"
+40-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml:31:13-43
+41            android:theme="@style/LaunchTheme"
+41-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml:32:13-47
+42            android:windowSoftInputMode="adjustResize" >
+42-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml:33:13-55
+43            <meta-data
+43-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml:35:13-37:57
+44                android:name="io.flutter.embedding.android.NormalTheme"
+44-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml:36:17-72
+45                android:resource="@style/NormalTheme" />
+45-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml:37:17-54
+46            <meta-data
+46-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml:38:13-40:66
+47                android:name="io.flutter.embedding.android.SplashScreenDrawable"
+47-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml:39:17-81
+48                android:resource="@drawable/launch_background" />
+48-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml:40:17-63
+49
+50            <intent-filter>
+50-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml:42:13-46:29
+51                <action android:name="android.intent.action.MAIN" />
+51-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml:43:17-69
+51-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml:43:25-66
+52
+53                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+53-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml:44:17-85
+53-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml:44:27-83
+54                <category android:name="android.intent.category.LAUNCHER" />
+54-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml:45:17-77
+54-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml:45:27-74
+55            </intent-filter>
+56        </activity>
+57
+58        <meta-data
+58-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml:48:9-50:33
+59            android:name="flutterEmbedding"
+59-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml:49:13-44
+60            android:value="2" />
+60-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml:50:13-30
+61
+62        <activity
+62-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml:51:9-57:41
+63            android:name="de.blinkt.openvpn.DisconnectVPNActivity"
+63-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml:52:13-67
+64            android:excludeFromRecents="true"
+64-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml:53:13-46
+65            android:noHistory="true"
+65-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml:54:13-37
+66            android:taskAffinity=".DisconnectVPN"
+66-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml:55:13-50
+67            android:theme="@style/blinkt.dialog" />
+67-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml:56:13-49
+68
+69        <service
+69-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml:58:9-64:19
+70            android:name="de.blinkt.openvpn.core.OpenVPNService"
+70-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml:59:13-65
+71            android:permission="android.permission.BIND_VPN_SERVICE" >
+71-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml:60:13-69
+72            <intent-filter>
+72-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml:61:13-63:29
+73                <action android:name="android.net.VpnService" />
+73-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml:62:17-65
+73-->/media/asus/project disck/downloads/files/android/app/src/main/AndroidManifest.xml:62:25-62
+74            </intent-filter>
+75        </service>
+76
+77        <activity
+77-->[:url_launcher] /media/asus/project disck/downloads/files/build/url_launcher/intermediates/library_manifest/release/AndroidManifest.xml:8:9-11:74
+78            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+78-->[:url_launcher] /media/asus/project disck/downloads/files/build/url_launcher/intermediates/library_manifest/release/AndroidManifest.xml:9:13-74
+79            android:exported="false"
+79-->[:url_launcher] /media/asus/project disck/downloads/files/build/url_launcher/intermediates/library_manifest/release/AndroidManifest.xml:10:13-37
+80            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+80-->[:url_launcher] /media/asus/project disck/downloads/files/build/url_launcher/intermediates/library_manifest/release/AndroidManifest.xml:11:13-71
+81
+82        <provider
+82-->[:share] /media/asus/project disck/downloads/files/build/share/intermediates/library_manifest/release/AndroidManifest.xml:8:9-16:20
+83            android:name="io.flutter.plugins.share.ShareFileProvider"
+83-->[:share] /media/asus/project disck/downloads/files/build/share/intermediates/library_manifest/release/AndroidManifest.xml:9:13-70
+84            android:authorities="com.gstudio.vpn.flutter.share_provider"
+84-->[:share] /media/asus/project disck/downloads/files/build/share/intermediates/library_manifest/release/AndroidManifest.xml:10:13-74
+85            android:exported="false"
+85-->[:share] /media/asus/project disck/downloads/files/build/share/intermediates/library_manifest/release/AndroidManifest.xml:11:13-37
+86            android:grantUriPermissions="true" >
+86-->[:share] /media/asus/project disck/downloads/files/build/share/intermediates/library_manifest/release/AndroidManifest.xml:12:13-47
+87            <meta-data
+87-->[:share] /media/asus/project disck/downloads/files/build/share/intermediates/library_manifest/release/AndroidManifest.xml:13:13-15:68
+88                android:name="android.support.FILE_PROVIDER_PATHS"
+88-->[:share] /media/asus/project disck/downloads/files/build/share/intermediates/library_manifest/release/AndroidManifest.xml:14:17-67
+89                android:resource="@xml/flutter_share_file_paths" />
+89-->[:share] /media/asus/project disck/downloads/files/build/share/intermediates/library_manifest/release/AndroidManifest.xml:15:17-65
+90        </provider>
+91
+92        <receiver
+92-->[com.google.android.gms:play-services-measurement:17.2.2] /home/asus/.gradle/caches/transforms-2/files-2.1/2070b7ef4f65113fb3e299fc070b5115/jetified-play-services-measurement-17.2.2/AndroidManifest.xml:29:9-33:20
+93            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+93-->[com.google.android.gms:play-services-measurement:17.2.2] /home/asus/.gradle/caches/transforms-2/files-2.1/2070b7ef4f65113fb3e299fc070b5115/jetified-play-services-measurement-17.2.2/AndroidManifest.xml:30:13-85
+94            android:enabled="true"
+94-->[com.google.android.gms:play-services-measurement:17.2.2] /home/asus/.gradle/caches/transforms-2/files-2.1/2070b7ef4f65113fb3e299fc070b5115/jetified-play-services-measurement-17.2.2/AndroidManifest.xml:31:13-35
+95            android:exported="false" >
+95-->[com.google.android.gms:play-services-measurement:17.2.2] /home/asus/.gradle/caches/transforms-2/files-2.1/2070b7ef4f65113fb3e299fc070b5115/jetified-play-services-measurement-17.2.2/AndroidManifest.xml:32:13-37
+96        </receiver>
+97        <receiver
+97-->[com.google.android.gms:play-services-measurement:17.2.2] /home/asus/.gradle/caches/transforms-2/files-2.1/2070b7ef4f65113fb3e299fc070b5115/jetified-play-services-measurement-17.2.2/AndroidManifest.xml:34:9-42:20
+98            android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver"
+98-->[com.google.android.gms:play-services-measurement:17.2.2] /home/asus/.gradle/caches/transforms-2/files-2.1/2070b7ef4f65113fb3e299fc070b5115/jetified-play-services-measurement-17.2.2/AndroidManifest.xml:35:13-100
+99            android:enabled="true"
+99-->[com.google.android.gms:play-services-measurement:17.2.2] /home/asus/.gradle/caches/transforms-2/files-2.1/2070b7ef4f65113fb3e299fc070b5115/jetified-play-services-measurement-17.2.2/AndroidManifest.xml:36:13-35
+100            android:exported="true"
+100-->[com.google.android.gms:play-services-measurement:17.2.2] /home/asus/.gradle/caches/transforms-2/files-2.1/2070b7ef4f65113fb3e299fc070b5115/jetified-play-services-measurement-17.2.2/AndroidManifest.xml:37:13-36
+101            android:permission="android.permission.INSTALL_PACKAGES" >
+101-->[com.google.android.gms:play-services-measurement:17.2.2] /home/asus/.gradle/caches/transforms-2/files-2.1/2070b7ef4f65113fb3e299fc070b5115/jetified-play-services-measurement-17.2.2/AndroidManifest.xml:38:13-69
+102            <intent-filter>
+102-->[com.google.android.gms:play-services-measurement:17.2.2] /home/asus/.gradle/caches/transforms-2/files-2.1/2070b7ef4f65113fb3e299fc070b5115/jetified-play-services-measurement-17.2.2/AndroidManifest.xml:39:13-41:29
+103                <action android:name="com.android.vending.INSTALL_REFERRER" />
+103-->[com.google.android.gms:play-services-measurement:17.2.2] /home/asus/.gradle/caches/transforms-2/files-2.1/2070b7ef4f65113fb3e299fc070b5115/jetified-play-services-measurement-17.2.2/AndroidManifest.xml:40:17-79
+103-->[com.google.android.gms:play-services-measurement:17.2.2] /home/asus/.gradle/caches/transforms-2/files-2.1/2070b7ef4f65113fb3e299fc070b5115/jetified-play-services-measurement-17.2.2/AndroidManifest.xml:40:25-76
+104            </intent-filter>
+105        </receiver>
+106
+107        <service
+107-->[com.google.android.gms:play-services-measurement:17.2.2] /home/asus/.gradle/caches/transforms-2/files-2.1/2070b7ef4f65113fb3e299fc070b5115/jetified-play-services-measurement-17.2.2/AndroidManifest.xml:44:9-47:40
+108            android:name="com.google.android.gms.measurement.AppMeasurementService"
+108-->[com.google.android.gms:play-services-measurement:17.2.2] /home/asus/.gradle/caches/transforms-2/files-2.1/2070b7ef4f65113fb3e299fc070b5115/jetified-play-services-measurement-17.2.2/AndroidManifest.xml:45:13-84
+109            android:enabled="true"
+109-->[com.google.android.gms:play-services-measurement:17.2.2] /home/asus/.gradle/caches/transforms-2/files-2.1/2070b7ef4f65113fb3e299fc070b5115/jetified-play-services-measurement-17.2.2/AndroidManifest.xml:46:13-35
+110            android:exported="false" />
+110-->[com.google.android.gms:play-services-measurement:17.2.2] /home/asus/.gradle/caches/transforms-2/files-2.1/2070b7ef4f65113fb3e299fc070b5115/jetified-play-services-measurement-17.2.2/AndroidManifest.xml:47:13-37
+111        <service
+111-->[com.google.android.gms:play-services-measurement:17.2.2] /home/asus/.gradle/caches/transforms-2/files-2.1/2070b7ef4f65113fb3e299fc070b5115/jetified-play-services-measurement-17.2.2/AndroidManifest.xml:48:9-52:72
+112            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+112-->[com.google.android.gms:play-services-measurement:17.2.2] /home/asus/.gradle/caches/transforms-2/files-2.1/2070b7ef4f65113fb3e299fc070b5115/jetified-play-services-measurement-17.2.2/AndroidManifest.xml:49:13-87
+113            android:enabled="true"
+113-->[com.google.android.gms:play-services-measurement:17.2.2] /home/asus/.gradle/caches/transforms-2/files-2.1/2070b7ef4f65113fb3e299fc070b5115/jetified-play-services-measurement-17.2.2/AndroidManifest.xml:50:13-35
+114            android:exported="false"
+114-->[com.google.android.gms:play-services-measurement:17.2.2] /home/asus/.gradle/caches/transforms-2/files-2.1/2070b7ef4f65113fb3e299fc070b5115/jetified-play-services-measurement-17.2.2/AndroidManifest.xml:51:13-37
+115            android:permission="android.permission.BIND_JOB_SERVICE" />
+115-->[com.google.android.gms:play-services-measurement:17.2.2] /home/asus/.gradle/caches/transforms-2/files-2.1/2070b7ef4f65113fb3e299fc070b5115/jetified-play-services-measurement-17.2.2/AndroidManifest.xml:52:13-69
+116        <service
+116-->[com.google.android.gms:play-services-measurement-api:17.2.2] /home/asus/.gradle/caches/transforms-2/files-2.1/3dd30d587b96ee32c8c1f32fd39076d6/jetified-play-services-measurement-api-17.2.2/AndroidManifest.xml:27:9-33:19
+117            android:name="com.google.firebase.components.ComponentDiscoveryService"
+117-->[com.google.android.gms:play-services-measurement-api:17.2.2] /home/asus/.gradle/caches/transforms-2/files-2.1/3dd30d587b96ee32c8c1f32fd39076d6/jetified-play-services-measurement-api-17.2.2/AndroidManifest.xml:28:13-84
+118            android:directBootAware="true"
+118-->[com.google.firebase:firebase-common:19.3.0] /home/asus/.gradle/caches/transforms-2/files-2.1/a45ceb11927ebe1e44492514ce5913e0/jetified-firebase-common-19.3.0/AndroidManifest.xml:34:13-43
+119            android:exported="false" >
+119-->[com.google.android.gms:play-services-measurement-api:17.2.2] /home/asus/.gradle/caches/transforms-2/files-2.1/3dd30d587b96ee32c8c1f32fd39076d6/jetified-play-services-measurement-api-17.2.2/AndroidManifest.xml:29:13-37
+120            <meta-data
+120-->[com.google.android.gms:play-services-measurement-api:17.2.2] /home/asus/.gradle/caches/transforms-2/files-2.1/3dd30d587b96ee32c8c1f32fd39076d6/jetified-play-services-measurement-api-17.2.2/AndroidManifest.xml:30:13-32:85
+121                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+121-->[com.google.android.gms:play-services-measurement-api:17.2.2] /home/asus/.gradle/caches/transforms-2/files-2.1/3dd30d587b96ee32c8c1f32fd39076d6/jetified-play-services-measurement-api-17.2.2/AndroidManifest.xml:31:17-139
+122                android:value="com.google.firebase.components.ComponentRegistrar" />
+122-->[com.google.android.gms:play-services-measurement-api:17.2.2] /home/asus/.gradle/caches/transforms-2/files-2.1/3dd30d587b96ee32c8c1f32fd39076d6/jetified-play-services-measurement-api-17.2.2/AndroidManifest.xml:32:17-82
+123            <meta-data
+123-->[com.google.firebase:firebase-iid:20.0.2] /home/asus/.gradle/caches/transforms-2/files-2.1/9821ac914ea42f262d2c2ea854857fd2/jetified-firebase-iid-20.0.2/AndroidManifest.xml:32:13-34:85
+124                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
+124-->[com.google.firebase:firebase-iid:20.0.2] /home/asus/.gradle/caches/transforms-2/files-2.1/9821ac914ea42f262d2c2ea854857fd2/jetified-firebase-iid-20.0.2/AndroidManifest.xml:33:17-96
+125                android:value="com.google.firebase.components.ComponentRegistrar" />
+125-->[com.google.firebase:firebase-iid:20.0.2] /home/asus/.gradle/caches/transforms-2/files-2.1/9821ac914ea42f262d2c2ea854857fd2/jetified-firebase-iid-20.0.2/AndroidManifest.xml:34:17-82
+126        </service>
+127
+128        <receiver
+128-->[com.google.firebase:firebase-iid:20.0.2] /home/asus/.gradle/caches/transforms-2/files-2.1/9821ac914ea42f262d2c2ea854857fd2/jetified-firebase-iid-20.0.2/AndroidManifest.xml:37:9-44:20
+129            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+129-->[com.google.firebase:firebase-iid:20.0.2] /home/asus/.gradle/caches/transforms-2/files-2.1/9821ac914ea42f262d2c2ea854857fd2/jetified-firebase-iid-20.0.2/AndroidManifest.xml:38:13-78
+130            android:exported="true"
+130-->[com.google.firebase:firebase-iid:20.0.2] /home/asus/.gradle/caches/transforms-2/files-2.1/9821ac914ea42f262d2c2ea854857fd2/jetified-firebase-iid-20.0.2/AndroidManifest.xml:39:13-36
+131            android:permission="com.google.android.c2dm.permission.SEND" >
+131-->[com.google.firebase:firebase-iid:20.0.2] /home/asus/.gradle/caches/transforms-2/files-2.1/9821ac914ea42f262d2c2ea854857fd2/jetified-firebase-iid-20.0.2/AndroidManifest.xml:40:13-73
+132            <intent-filter>
+132-->[com.google.firebase:firebase-iid:20.0.2] /home/asus/.gradle/caches/transforms-2/files-2.1/9821ac914ea42f262d2c2ea854857fd2/jetified-firebase-iid-20.0.2/AndroidManifest.xml:41:13-43:29
+133                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+133-->[com.google.firebase:firebase-iid:20.0.2] /home/asus/.gradle/caches/transforms-2/files-2.1/9821ac914ea42f262d2c2ea854857fd2/jetified-firebase-iid-20.0.2/AndroidManifest.xml:42:17-81
+133-->[com.google.firebase:firebase-iid:20.0.2] /home/asus/.gradle/caches/transforms-2/files-2.1/9821ac914ea42f262d2c2ea854857fd2/jetified-firebase-iid-20.0.2/AndroidManifest.xml:42:25-78
+134            </intent-filter>
+135        </receiver> <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
+136        <activity
+136-->[com.google.android.gms:play-services-ads-lite:19.1.0] /home/asus/.gradle/caches/transforms-2/files-2.1/736837c513ce0a2ca214c034973b81a1/jetified-play-services-ads-lite-19.1.0/AndroidManifest.xml:29:9-33:64
+137            android:name="com.google.android.gms.ads.AdActivity"
+137-->[com.google.android.gms:play-services-ads-lite:19.1.0] /home/asus/.gradle/caches/transforms-2/files-2.1/736837c513ce0a2ca214c034973b81a1/jetified-play-services-ads-lite-19.1.0/AndroidManifest.xml:30:13-65
+138            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+138-->[com.google.android.gms:play-services-ads-lite:19.1.0] /home/asus/.gradle/caches/transforms-2/files-2.1/736837c513ce0a2ca214c034973b81a1/jetified-play-services-ads-lite-19.1.0/AndroidManifest.xml:31:13-122
+139            android:exported="false"
+139-->[com.google.android.gms:play-services-ads-lite:19.1.0] /home/asus/.gradle/caches/transforms-2/files-2.1/736837c513ce0a2ca214c034973b81a1/jetified-play-services-ads-lite-19.1.0/AndroidManifest.xml:32:13-37
+140            android:theme="@android:style/Theme.Translucent" />
+140-->[com.google.android.gms:play-services-ads-lite:19.1.0] /home/asus/.gradle/caches/transforms-2/files-2.1/736837c513ce0a2ca214c034973b81a1/jetified-play-services-ads-lite-19.1.0/AndroidManifest.xml:33:13-61
+141
+142        <provider
+142-->[com.google.android.gms:play-services-ads-lite:19.1.0] /home/asus/.gradle/caches/transforms-2/files-2.1/736837c513ce0a2ca214c034973b81a1/jetified-play-services-ads-lite-19.1.0/AndroidManifest.xml:35:9-39:39
+143            android:name="com.google.android.gms.ads.MobileAdsInitProvider"
+143-->[com.google.android.gms:play-services-ads-lite:19.1.0] /home/asus/.gradle/caches/transforms-2/files-2.1/736837c513ce0a2ca214c034973b81a1/jetified-play-services-ads-lite-19.1.0/AndroidManifest.xml:36:13-76
+144            android:authorities="com.gstudio.vpn.mobileadsinitprovider"
+144-->[com.google.android.gms:play-services-ads-lite:19.1.0] /home/asus/.gradle/caches/transforms-2/files-2.1/736837c513ce0a2ca214c034973b81a1/jetified-play-services-ads-lite-19.1.0/AndroidManifest.xml:37:13-73
+145            android:exported="false"
+145-->[com.google.android.gms:play-services-ads-lite:19.1.0] /home/asus/.gradle/caches/transforms-2/files-2.1/736837c513ce0a2ca214c034973b81a1/jetified-play-services-ads-lite-19.1.0/AndroidManifest.xml:38:13-37
+146            android:initOrder="100" />
+146-->[com.google.android.gms:play-services-ads-lite:19.1.0] /home/asus/.gradle/caches/transforms-2/files-2.1/736837c513ce0a2ca214c034973b81a1/jetified-play-services-ads-lite-19.1.0/AndroidManifest.xml:39:13-36
+147        <provider
+147-->[com.google.firebase:firebase-common:19.3.0] /home/asus/.gradle/caches/transforms-2/files-2.1/a45ceb11927ebe1e44492514ce5913e0/jetified-firebase-common-19.3.0/AndroidManifest.xml:26:9-30:39
+148            android:name="com.google.firebase.provider.FirebaseInitProvider"
+148-->[com.google.firebase:firebase-common:19.3.0] /home/asus/.gradle/caches/transforms-2/files-2.1/a45ceb11927ebe1e44492514ce5913e0/jetified-firebase-common-19.3.0/AndroidManifest.xml:27:13-77
+149            android:authorities="com.gstudio.vpn.firebaseinitprovider"
+149-->[com.google.firebase:firebase-common:19.3.0] /home/asus/.gradle/caches/transforms-2/files-2.1/a45ceb11927ebe1e44492514ce5913e0/jetified-firebase-common-19.3.0/AndroidManifest.xml:28:13-72
+150            android:exported="false"
+150-->[com.google.firebase:firebase-common:19.3.0] /home/asus/.gradle/caches/transforms-2/files-2.1/a45ceb11927ebe1e44492514ce5913e0/jetified-firebase-common-19.3.0/AndroidManifest.xml:29:13-37
+151            android:initOrder="100" />
+151-->[com.google.firebase:firebase-common:19.3.0] /home/asus/.gradle/caches/transforms-2/files-2.1/a45ceb11927ebe1e44492514ce5913e0/jetified-firebase-common-19.3.0/AndroidManifest.xml:30:13-36
+152
+153        <activity
+153-->[com.google.android.gms:play-services-base:17.0.0] /home/asus/.gradle/caches/transforms-2/files-2.1/9b16a6f9672967c15fd99cf049c06404/jetified-play-services-base-17.0.0/AndroidManifest.xml:23:9-26:75
+154            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+154-->[com.google.android.gms:play-services-base:17.0.0] /home/asus/.gradle/caches/transforms-2/files-2.1/9b16a6f9672967c15fd99cf049c06404/jetified-play-services-base-17.0.0/AndroidManifest.xml:24:13-79
+155            android:exported="false"
+155-->[com.google.android.gms:play-services-base:17.0.0] /home/asus/.gradle/caches/transforms-2/files-2.1/9b16a6f9672967c15fd99cf049c06404/jetified-play-services-base-17.0.0/AndroidManifest.xml:25:13-37
+156            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+156-->[com.google.android.gms:play-services-base:17.0.0] /home/asus/.gradle/caches/transforms-2/files-2.1/9b16a6f9672967c15fd99cf049c06404/jetified-play-services-base-17.0.0/AndroidManifest.xml:26:13-72
+157
+158        <meta-data
+158-->[com.google.android.gms:play-services-basement:17.6.0] /home/asus/.gradle/caches/transforms-2/files-2.1/8d2f5bf32e4f79023d13841f5ea2b3aa/jetified-play-services-basement-17.6.0/AndroidManifest.xml:23:9-25:69
+159            android:name="com.google.android.gms.version"
+159-->[com.google.android.gms:play-services-basement:17.6.0] /home/asus/.gradle/caches/transforms-2/files-2.1/8d2f5bf32e4f79023d13841f5ea2b3aa/jetified-play-services-basement-17.6.0/AndroidManifest.xml:24:13-58
+160            android:value="@integer/google_play_services_version" /> <!-- The activities will be merged into the manifest of the hosting app. -->
+160-->[com.google.android.gms:play-services-basement:17.6.0] /home/asus/.gradle/caches/transforms-2/files-2.1/8d2f5bf32e4f79023d13841f5ea2b3aa/jetified-play-services-basement-17.6.0/AndroidManifest.xml:25:13-66
+161        <activity
+161-->[com.google.android.play:core:1.10.0] /home/asus/.gradle/caches/transforms-2/files-2.1/da0eaac3c35a52eea7821462564d2383/jetified-core-1.10.0/AndroidManifest.xml:12:5-271
+162            android:name="com.google.android.play.core.missingsplits.PlayCoreMissingSplitsActivity"
+162-->[com.google.android.play:core:1.10.0] /home/asus/.gradle/caches/transforms-2/files-2.1/da0eaac3c35a52eea7821462564d2383/jetified-core-1.10.0/AndroidManifest.xml:12:15-102
+163            android:enabled="false"
+163-->[com.google.android.play:core:1.10.0] /home/asus/.gradle/caches/transforms-2/files-2.1/da0eaac3c35a52eea7821462564d2383/jetified-core-1.10.0/AndroidManifest.xml:12:103-126
+164            android:exported="false"
+164-->[com.google.android.play:core:1.10.0] /home/asus/.gradle/caches/transforms-2/files-2.1/da0eaac3c35a52eea7821462564d2383/jetified-core-1.10.0/AndroidManifest.xml:12:127-151
+165            android:launchMode="singleInstance"
+165-->[com.google.android.play:core:1.10.0] /home/asus/.gradle/caches/transforms-2/files-2.1/da0eaac3c35a52eea7821462564d2383/jetified-core-1.10.0/AndroidManifest.xml:12:204-239
+166            android:process=":playcore_missing_splits_activity"
+166-->[com.google.android.play:core:1.10.0] /home/asus/.gradle/caches/transforms-2/files-2.1/da0eaac3c35a52eea7821462564d2383/jetified-core-1.10.0/AndroidManifest.xml:12:152-203
+167            android:stateNotNeeded="true" />
+167-->[com.google.android.play:core:1.10.0] /home/asus/.gradle/caches/transforms-2/files-2.1/da0eaac3c35a52eea7821462564d2383/jetified-core-1.10.0/AndroidManifest.xml:12:240-269
+168        <activity
+168-->[com.google.android.play:core:1.10.0] /home/asus/.gradle/caches/transforms-2/files-2.1/da0eaac3c35a52eea7821462564d2383/jetified-core-1.10.0/AndroidManifest.xml:13:5-226
+169            android:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity"
+169-->[com.google.android.play:core:1.10.0] /home/asus/.gradle/caches/transforms-2/files-2.1/da0eaac3c35a52eea7821462564d2383/jetified-core-1.10.0/AndroidManifest.xml:13:15-95
+170            android:enabled="false"
+170-->[com.google.android.play:core:1.10.0] /home/asus/.gradle/caches/transforms-2/files-2.1/da0eaac3c35a52eea7821462564d2383/jetified-core-1.10.0/AndroidManifest.xml:13:96-119
+171            android:exported="false"
+171-->[com.google.android.play:core:1.10.0] /home/asus/.gradle/caches/transforms-2/files-2.1/da0eaac3c35a52eea7821462564d2383/jetified-core-1.10.0/AndroidManifest.xml:13:120-144
+172            android:stateNotNeeded="true"
+172-->[com.google.android.play:core:1.10.0] /home/asus/.gradle/caches/transforms-2/files-2.1/da0eaac3c35a52eea7821462564d2383/jetified-core-1.10.0/AndroidManifest.xml:13:145-174
+173            android:theme="@style/Theme.PlayCore.Transparent" /> <!-- The services will be merged into the manifest of the hosting app. -->
+173-->[com.google.android.play:core:1.10.0] /home/asus/.gradle/caches/transforms-2/files-2.1/da0eaac3c35a52eea7821462564d2383/jetified-core-1.10.0/AndroidManifest.xml:13:175-224
+174        <service
+174-->[com.google.android.play:core:1.10.0] /home/asus/.gradle/caches/transforms-2/files-2.1/da0eaac3c35a52eea7821462564d2383/jetified-core-1.10.0/AndroidManifest.xml:16:5-18:15
+175            android:name="com.google.android.play.core.assetpacks.AssetPackExtractionService"
+175-->[com.google.android.play:core:1.10.0] /home/asus/.gradle/caches/transforms-2/files-2.1/da0eaac3c35a52eea7821462564d2383/jetified-core-1.10.0/AndroidManifest.xml:16:14-95
+176            android:enabled="false"
+176-->[com.google.android.play:core:1.10.0] /home/asus/.gradle/caches/transforms-2/files-2.1/da0eaac3c35a52eea7821462564d2383/jetified-core-1.10.0/AndroidManifest.xml:16:96-119
+177            android:exported="true" >
+177-->[com.google.android.play:core:1.10.0] /home/asus/.gradle/caches/transforms-2/files-2.1/da0eaac3c35a52eea7821462564d2383/jetified-core-1.10.0/AndroidManifest.xml:16:120-143
+178            <meta-data
+178-->[com.google.android.play:core:1.10.0] /home/asus/.gradle/caches/transforms-2/files-2.1/da0eaac3c35a52eea7821462564d2383/jetified-core-1.10.0/AndroidManifest.xml:17:7-108
+179                android:name="com.google.android.play.core.assetpacks.versionCode"
+179-->[com.google.android.play:core:1.10.0] /home/asus/.gradle/caches/transforms-2/files-2.1/da0eaac3c35a52eea7821462564d2383/jetified-core-1.10.0/AndroidManifest.xml:17:18-84
+180                android:value="11000" />
+180-->[com.google.android.play:core:1.10.0] /home/asus/.gradle/caches/transforms-2/files-2.1/da0eaac3c35a52eea7821462564d2383/jetified-core-1.10.0/AndroidManifest.xml:17:85-106
+181        </service>
+182        <service
+182-->[com.google.android.play:core:1.10.0] /home/asus/.gradle/caches/transforms-2/files-2.1/da0eaac3c35a52eea7821462564d2383/jetified-core-1.10.0/AndroidManifest.xml:19:5-147
+183            android:name="com.google.android.play.core.assetpacks.ExtractionForegroundService"
+183-->[com.google.android.play:core:1.10.0] /home/asus/.gradle/caches/transforms-2/files-2.1/da0eaac3c35a52eea7821462564d2383/jetified-core-1.10.0/AndroidManifest.xml:19:14-96
+184            android:enabled="false"
+184-->[com.google.android.play:core:1.10.0] /home/asus/.gradle/caches/transforms-2/files-2.1/da0eaac3c35a52eea7821462564d2383/jetified-core-1.10.0/AndroidManifest.xml:19:97-120
+185            android:exported="false" />
+185-->[com.google.android.play:core:1.10.0] /home/asus/.gradle/caches/transforms-2/files-2.1/da0eaac3c35a52eea7821462564d2383/jetified-core-1.10.0/AndroidManifest.xml:19:121-145
+186
+187        <meta-data
+187-->[com.android.billingclient:billing:3.0.0] /home/asus/.gradle/caches/transforms-2/files-2.1/1c73e24fb66133cdd16d6d7ff6fb0541/jetified-billing-3.0.0/AndroidManifest.xml:13:9-15:37
+188            android:name="com.google.android.play.billingclient.version"
+188-->[com.android.billingclient:billing:3.0.0] /home/asus/.gradle/caches/transforms-2/files-2.1/1c73e24fb66133cdd16d6d7ff6fb0541/jetified-billing-3.0.0/AndroidManifest.xml:14:13-73
+189            android:value="3.0.0" />
+189-->[com.android.billingclient:billing:3.0.0] /home/asus/.gradle/caches/transforms-2/files-2.1/1c73e24fb66133cdd16d6d7ff6fb0541/jetified-billing-3.0.0/AndroidManifest.xml:15:13-34
+190
+191        <activity
+191-->[com.android.billingclient:billing:3.0.0] /home/asus/.gradle/caches/transforms-2/files-2.1/1c73e24fb66133cdd16d6d7ff6fb0541/jetified-billing-3.0.0/AndroidManifest.xml:17:9-20:75
+192            android:name="com.android.billingclient.api.ProxyBillingActivity"
+192-->[com.android.billingclient:billing:3.0.0] /home/asus/.gradle/caches/transforms-2/files-2.1/1c73e24fb66133cdd16d6d7ff6fb0541/jetified-billing-3.0.0/AndroidManifest.xml:18:13-78
+193            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+193-->[com.android.billingclient:billing:3.0.0] /home/asus/.gradle/caches/transforms-2/files-2.1/1c73e24fb66133cdd16d6d7ff6fb0541/jetified-billing-3.0.0/AndroidManifest.xml:19:13-96
+194            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+194-->[com.android.billingclient:billing:3.0.0] /home/asus/.gradle/caches/transforms-2/files-2.1/1c73e24fb66133cdd16d6d7ff6fb0541/jetified-billing-3.0.0/AndroidManifest.xml:20:13-72
+195    </application>
+196
+197</manifest>

@@ -1,0 +1,23 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /host/SDKS/flutter/.pub-cache/hosted/pub.dartlang.org/admob_flutter-2.0.0-nullsafety.1/android/src/main/AndroidManifest.xml:1:1-5:12
+INJECTED from /host/SDKS/flutter/.pub-cache/hosted/pub.dartlang.org/admob_flutter-2.0.0-nullsafety.1/android/src/main/AndroidManifest.xml:1:1-5:12
+INJECTED from /host/SDKS/flutter/.pub-cache/hosted/pub.dartlang.org/admob_flutter-2.0.0-nullsafety.1/android/src/main/AndroidManifest.xml:1:1-5:12
+	package
+		ADDED from /host/SDKS/flutter/.pub-cache/hosted/pub.dartlang.org/admob_flutter-2.0.0-nullsafety.1/android/src/main/AndroidManifest.xml:2:3-36
+		INJECTED from /host/SDKS/flutter/.pub-cache/hosted/pub.dartlang.org/admob_flutter-2.0.0-nullsafety.1/android/src/main/AndroidManifest.xml
+		INJECTED from /host/SDKS/flutter/.pub-cache/hosted/pub.dartlang.org/admob_flutter-2.0.0-nullsafety.1/android/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /host/SDKS/flutter/.pub-cache/hosted/pub.dartlang.org/admob_flutter-2.0.0-nullsafety.1/android/src/main/AndroidManifest.xml:1:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /host/SDKS/flutter/.pub-cache/hosted/pub.dartlang.org/admob_flutter-2.0.0-nullsafety.1/android/src/main/AndroidManifest.xml:4:5-67
+	android:name
+		ADDED from /host/SDKS/flutter/.pub-cache/hosted/pub.dartlang.org/admob_flutter-2.0.0-nullsafety.1/android/src/main/AndroidManifest.xml:4:22-64
+uses-sdk
+INJECTED from /host/SDKS/flutter/.pub-cache/hosted/pub.dartlang.org/admob_flutter-2.0.0-nullsafety.1/android/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /host/SDKS/flutter/.pub-cache/hosted/pub.dartlang.org/admob_flutter-2.0.0-nullsafety.1/android/src/main/AndroidManifest.xml
+INJECTED from /host/SDKS/flutter/.pub-cache/hosted/pub.dartlang.org/admob_flutter-2.0.0-nullsafety.1/android/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /host/SDKS/flutter/.pub-cache/hosted/pub.dartlang.org/admob_flutter-2.0.0-nullsafety.1/android/src/main/AndroidManifest.xml
+		ADDED from /host/SDKS/flutter/.pub-cache/hosted/pub.dartlang.org/admob_flutter-2.0.0-nullsafety.1/android/src/main/AndroidManifest.xml
+		INJECTED from /host/SDKS/flutter/.pub-cache/hosted/pub.dartlang.org/admob_flutter-2.0.0-nullsafety.1/android/src/main/AndroidManifest.xml

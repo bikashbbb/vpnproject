@@ -1,0 +1,9 @@
+io/flutter/plugins/GeneratedPluginRegistrant.java
+ io.flutter.plugins.GeneratedPluginRegistrant
+com/nerdtech/vpn/MainActivity.java
+ com.gstudio.vpn.MainActivity
+ com.gstudio.vpn.MainActivity$1
+ com.gstudio.vpn.MainActivity$2
+ com.gstudio.vpn.MainActivity$3
+com/gstudio/vpn/BuildConfig.java
+ com.gstudio.vpn.BuildConfig

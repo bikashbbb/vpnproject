@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/media/asus/project disck/downloads/files/build/admob_flutter/intermediates/res/merged/release/color/common_google_signin_btn_text_light.xml",
+        "source": "/home/asus/.gradle/caches/transforms-2/files-2.1/9b16a6f9672967c15fd99cf049c06404/jetified-play-services-base-17.0.0/res/color/common_google_signin_btn_text_light.xml"
+    },
+    {
+        "merged": "/media/asus/project disck/downloads/files/build/admob_flutter/intermediates/res/merged/release/color/common_google_signin_btn_text_dark.xml",
+        "source": "/home/asus/.gradle/caches/transforms-2/files-2.1/9b16a6f9672967c15fd99cf049c06404/jetified-play-services-base-17.0.0/res/color/common_google_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "/media/asus/project disck/downloads/files/build/admob_flutter/intermediates/res/merged/release/color/common_google_signin_btn_tint.xml",
+        "source": "/home/asus/.gradle/caches/transforms-2/files-2.1/9b16a6f9672967c15fd99cf049c06404/jetified-play-services-base-17.0.0/res/color/common_google_signin_btn_tint.xml"
+    }
+]

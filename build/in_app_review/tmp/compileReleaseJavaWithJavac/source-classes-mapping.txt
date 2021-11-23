@@ -1,0 +1,4 @@
+dev/britannio/in_app_review/BuildConfig.java
+ dev.britannio.in_app_review.BuildConfig
+dev/britannio/in_app_review/InAppReviewPlugin.java
+ dev.britannio.in_app_review.InAppReviewPlugin

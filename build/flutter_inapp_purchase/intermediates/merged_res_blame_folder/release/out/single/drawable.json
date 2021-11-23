@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/media/asus/project disck/downloads/files/build/flutter_inapp_purchase/intermediates/res/merged/release/drawable/notification_tile_bg.xml",
+        "source": "/home/asus/.gradle/caches/transforms-2/files-2.1/16960d4811de2f02a031adda5b9f8058/core-1.1.0/res/drawable/notification_tile_bg.xml"
+    },
+    {
+        "merged": "/media/asus/project disck/downloads/files/build/flutter_inapp_purchase/intermediates/res/merged/release/drawable/notification_bg_low.xml",
+        "source": "/home/asus/.gradle/caches/transforms-2/files-2.1/16960d4811de2f02a031adda5b9f8058/core-1.1.0/res/drawable/notification_bg_low.xml"
+    },
+    {
+        "merged": "/media/asus/project disck/downloads/files/build/flutter_inapp_purchase/intermediates/res/merged/release/drawable/notification_icon_background.xml",
+        "source": "/home/asus/.gradle/caches/transforms-2/files-2.1/16960d4811de2f02a031adda5b9f8058/core-1.1.0/res/drawable/notification_icon_background.xml"
+    },
+    {
+        "merged": "/media/asus/project disck/downloads/files/build/flutter_inapp_purchase/intermediates/res/merged/release/drawable/notification_bg.xml",
+        "source": "/home/asus/.gradle/caches/transforms-2/files-2.1/16960d4811de2f02a031adda5b9f8058/core-1.1.0/res/drawable/notification_bg.xml"
+    }
+]

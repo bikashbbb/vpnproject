@@ -1,0 +1,19 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /host/SDKS/flutter/.pub-cache/hosted/pub.dartlang.org/device_apps-2.1.1/android/src/main/AndroidManifest.xml:1:1-4:12
+INJECTED from /host/SDKS/flutter/.pub-cache/hosted/pub.dartlang.org/device_apps-2.1.1/android/src/main/AndroidManifest.xml:1:1-4:12
+INJECTED from /host/SDKS/flutter/.pub-cache/hosted/pub.dartlang.org/device_apps-2.1.1/android/src/main/AndroidManifest.xml:1:1-4:12
+	package
+		ADDED from /host/SDKS/flutter/.pub-cache/hosted/pub.dartlang.org/device_apps-2.1.1/android/src/main/AndroidManifest.xml:2:11-40
+		INJECTED from /host/SDKS/flutter/.pub-cache/hosted/pub.dartlang.org/device_apps-2.1.1/android/src/main/AndroidManifest.xml
+		INJECTED from /host/SDKS/flutter/.pub-cache/hosted/pub.dartlang.org/device_apps-2.1.1/android/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /host/SDKS/flutter/.pub-cache/hosted/pub.dartlang.org/device_apps-2.1.1/android/src/main/AndroidManifest.xml:1:11-69
+uses-sdk
+INJECTED from /host/SDKS/flutter/.pub-cache/hosted/pub.dartlang.org/device_apps-2.1.1/android/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /host/SDKS/flutter/.pub-cache/hosted/pub.dartlang.org/device_apps-2.1.1/android/src/main/AndroidManifest.xml
+INJECTED from /host/SDKS/flutter/.pub-cache/hosted/pub.dartlang.org/device_apps-2.1.1/android/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /host/SDKS/flutter/.pub-cache/hosted/pub.dartlang.org/device_apps-2.1.1/android/src/main/AndroidManifest.xml
+		ADDED from /host/SDKS/flutter/.pub-cache/hosted/pub.dartlang.org/device_apps-2.1.1/android/src/main/AndroidManifest.xml
+		INJECTED from /host/SDKS/flutter/.pub-cache/hosted/pub.dartlang.org/device_apps-2.1.1/android/src/main/AndroidManifest.xml

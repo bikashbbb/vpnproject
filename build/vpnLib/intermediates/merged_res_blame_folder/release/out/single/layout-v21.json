@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/media/asus/project disck/downloads/files/build/vpnLib/intermediates/res/merged/release/layout-v21/notification_action_tombstone.xml",
+        "source": "/home/asus/.gradle/caches/transforms-2/files-2.1/ab5f2bfc5a2f4cbe6a2793b662b61a27/core-1.5.0/res/layout-v21/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "/media/asus/project disck/downloads/files/build/vpnLib/intermediates/res/merged/release/layout-v21/notification_action.xml",
+        "source": "/home/asus/.gradle/caches/transforms-2/files-2.1/ab5f2bfc5a2f4cbe6a2793b662b61a27/core-1.5.0/res/layout-v21/notification_action.xml"
+    },
+    {
+        "merged": "/media/asus/project disck/downloads/files/build/vpnLib/intermediates/res/merged/release/layout-v21/notification_template_custom_big.xml",
+        "source": "/home/asus/.gradle/caches/transforms-2/files-2.1/ab5f2bfc5a2f4cbe6a2793b662b61a27/core-1.5.0/res/layout-v21/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "/media/asus/project disck/downloads/files/build/vpnLib/intermediates/res/merged/release/layout-v21/notification_template_icon_group.xml",
+        "source": "/home/asus/.gradle/caches/transforms-2/files-2.1/ab5f2bfc5a2f4cbe6a2793b662b61a27/core-1.5.0/res/layout-v21/notification_template_icon_group.xml"
+    }
+]
