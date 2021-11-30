@@ -31,6 +31,8 @@ class BerandaPage extends StatefulWidget {
 }
 
 class _BerandaPageState extends State<BerandaPage> {
+  var height;
+  var width;
   @override
   void didChangeDependencies() {
     VpnProvider.refreshInfoVPN(context);
@@ -44,6 +46,8 @@ class _BerandaPageState extends State<BerandaPage> {
 
   @override
   Widget build(BuildContext context) {
+    height = MediaQuery.of(context).size.height;
+    width = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -73,7 +77,21 @@ class _BerandaPageState extends State<BerandaPage> {
           height: 200,
           child: _connectButtonWidget(),
         ),
-        ColumnDivider(space: 20),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Consumer<VpnProvider>(builder: (context, object, child) {
+              return object.getVPnstage() == "disconnected" ||
+                      object.getVPnstage() == "DISCONNECTED"
+                  ? Text(
+                      'Tap the button to connect',
+                      style: TextStyle(color: Colors.blue, fontSize: 16),
+                    )
+                  : SizedBox();
+            }),
+          ],
+        ),
+        //ColumnDivider(space: 10),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -90,61 +108,116 @@ class _BerandaPageState extends State<BerandaPage> {
   Widget _connectionInfo() {
     return Container(
       height: 100,
-      alignment: Alignment.center,
-      padding: EdgeInsets.symmetric(horizontal: 40),
       child: Consumer<VpnProvider>(
         builder: (context, snapshot, child) {
-          String byteIn = "0,0 kB - 0,0 kB/s";
-          String byteOut = "0,0 kB - 0,0 kB/s";
+          String byteIn = "0,0";
+          String byteOut = "0,0 ";
 
           if (snapshot.vpnStatus != null) {
             byteIn = snapshot.vpnStatus!.byteIn!.trim().length == 0
-                ? "0,0 kB - 0,0 kB/s"
+                ? "0,0 kB/s"
                 : snapshot.vpnStatus!.byteIn!.trim();
             byteOut = snapshot.vpnStatus!.byteOut!.trim().length == 0
-                ? "0,0 kB - 0,0 kB/s"
+                ? "0,0 kB/s"
                 : snapshot.vpnStatus!.byteOut!.trim();
           }
           return Row(
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Expanded(
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text(
-                      "download".tr(),
-                      style: TextStyle(
+                    ListTile(
+                      horizontalTitleGap: 0,
+                      minLeadingWidth: 0,
+                      leading: Padding(
+                        padding: const EdgeInsets.only(left: 40, top: 8),
+                        child: Icon(
+                          Icons.arrow_circle_down,
                           color: Colors.white,
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold),
-                      textAlign: TextAlign.center,
-                    ),
-                    Text(
-                      byteIn,
-                      style: TextStyle(fontSize: 12, color: Colors.white),
-                      textAlign: TextAlign.center,
+                          size: 28,
+                        ),
+                      ),
+                      title: Padding(
+                        padding: const EdgeInsets.only(right: 14),
+                        child: Text(
+                          "download".tr(),
+                          style: TextStyle(
+                              color: Colors.white60,
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                      subtitle: Padding(
+                        padding: const EdgeInsets.only(left: 3),
+                        child: Container(
+                          alignment: Alignment.topLeft,
+                          child: Row(
+                            children: [
+                              Text(
+                                (byteIn.split('k')[0]),
+                                style: TextStyle(
+                                    fontSize: 16, color: Colors.white),
+                                textAlign: TextAlign.center,
+                              ),
+                              Text(
+                                'KB/s',
+                                style: TextStyle(color: Colors.white60),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
                     ),
                   ],
                 ),
               ),
               Expanded(
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text(
-                      "upload".tr(),
-                      style: TextStyle(
+                    ListTile(
+                      leading: Padding(
+                        padding: const EdgeInsets.only(top: 8, left: 10),
+                        child: Icon(
+                          Icons.arrow_circle_up,
                           color: Colors.white,
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold),
-                      textAlign: TextAlign.center,
-                    ),
-                    Text(
-                      byteOut,
-                      style: TextStyle(fontSize: 12, color: Colors.white),
-                      textAlign: TextAlign.center,
+                          size: 28,
+                        ),
+                      ),
+                      horizontalTitleGap: 0,
+                      minLeadingWidth: 0,
+                      title: Padding(
+                        padding: const EdgeInsets.only(right: 65),
+                        child: Text(
+                          "upload".tr(),
+                          style: TextStyle(
+                              color: Colors.white60,
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                      subtitle: Padding(
+                        padding: const EdgeInsets.only(left: 3),
+                        child: Container(
+                          alignment: Alignment.centerLeft,
+                          child: Row(
+                            children: [
+                              Text(
+                                byteOut.split('k')[0],
+                                style: TextStyle(
+                                    fontSize: 16, color: Colors.white),
+                                textAlign: TextAlign.center,
+                              ),
+                              Text(
+                                'KB/s',
+                                style: TextStyle(color: Colors.white60),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
                     ),
                   ],
                 ),
@@ -202,7 +275,9 @@ class _BerandaPageState extends State<BerandaPage> {
             ),
             child: TextButton(
                 // focusColor: focusColor,
-                onPressed: () => _connectVPNClick(value),
+                onPressed: () {
+                  _connectVPNClick(value);
+                },
                 child: Text('')),
           ),
         );

@@ -21,7 +21,10 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   double selectServerOpacity = 0;
+  bool dragstarted = false;
   final ScrollController _scrollController = ScrollController();
+  final PageController pageController = PageController();
+
   @override
   void initState() {
     Future.delayed(Duration.zero).then((value) {
@@ -38,6 +41,7 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   Widget build(BuildContext context) {
+    double grabheight = 90;
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
     return WillPopScope(
@@ -58,70 +62,77 @@ class _MainScreenState extends State<MainScreen> {
         }
       },
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         bottomNavigationBar: Consumer<VpnProvider>(
             builder: (context, value, child) =>
                 value.isPro ? SizedBox.shrink() : child!,
-            child: SizedBox(
-                height: 50,
-                child: AdsProvider.adWidget(
-                  context,
-                  adsize: AdmobBannerSize(
-                      height: 50,
-                      width: MediaQuery.of(context).size.width.toInt(),
-                      name: "full"),
-                ))),
+            child: SingleChildScrollView(
+              child: SizedBox(
+                  height: 50,
+                  child: AdsProvider.adWidget(
+                    context,
+                    adsize: AdmobBannerSize(
+                        height: 50,
+                        width: MediaQuery.of(context).size.width.toInt(),
+                        name: "full"),
+                  )),
+            )),
         body: Container(
           decoration: BoxDecoration(
               image: DecorationImage(
                   fit: BoxFit.cover,
                   image: AssetImage('assets/images/19.png'))),
           child: SnappingSheet(
+            // TODO
+
             controller: UIProvider.instance(context).sheetController,
+
             onSheetMoved: (position) {
               double _val = (100 / 600) * (position.pixels / 600);
               if (_val > 1) return;
               if (_val < 0.5) _val = 0;
               if (_val > 1) _val = 1;
+              if (position.pixels >= 70) {
+                setState(() {
+                  dragstarted = true;
+                  grabheight = 500;
+                });
+              } else if (position.pixels <= 70) {
+                setState(() {
+                  dragstarted = false;
+                  grabheight = 90;
+                });
+              }
               setState(() {
                 selectServerOpacity = _val;
               });
             },
             initialSnappingPosition: SnappingPosition.factor(
               positionFactor: 0.0,
-              snappingCurve: Curves.easeOutExpo,
               snappingDuration: Duration(seconds: 1),
               grabbingContentOffset: GrabbingContentOffset.top,
             ),
             snappingPositions: [
               SnappingPosition.factor(
                 positionFactor: 0.0,
-                snappingCurve: Curves.easeOutExpo,
                 snappingDuration: Duration(seconds: 1),
                 grabbingContentOffset: GrabbingContentOffset.top,
               ),
               SnappingPosition.factor(
                 positionFactor: .8,
-                snappingCurve: Curves.bounceOut,
                 snappingDuration: Duration(seconds: 1),
                 grabbingContentOffset: GrabbingContentOffset.bottom,
               ),
             ],
-            grabbingHeight: 100,
+            grabbingHeight: grabheight,
             sheetBelow: SnappingSheetContent(
               child: Container(
-                child: SelectVpnScreen(scrollController: _scrollController),
+                child: SelectVpnScreen(
+                  scrollController: _scrollController,
+                  buttononly: false,
+                ),
                 decoration: BoxDecoration(
                   color: HexColor('221953'),
-                  boxShadow: [
-                    BoxShadow(
-                        color: Colors.black.withOpacity(.1),
-                        offset: Offset(0, -1),
-                        blurRadius: 10)
-                  ],
-                  borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(20),
-                    topLeft: Radius.circular(20),
-                  ),
                 ),
               ),
             ),
@@ -175,108 +186,138 @@ class _MainScreenState extends State<MainScreen> {
   }
 
   Widget _customBottomNavBar() {
-    return CustomCard(
-      margin: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
-      radius: 20,
-      backgroundColor: Colors.white.withOpacity(1),
-      child: Stack(
-        children: [
-          Padding(
-            padding: EdgeInsets.all(4),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  'Selected Server',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                Consumer<VpnProvider>(
-                  builder: (context, value, child) => SizedBox(
-                    height: 60,
-                    child: TextButton(
-                      style: ButtonStyle(
-                          // TODO:
-                          backgroundColor:
-                              MaterialStateProperty.all(Colors.transparent),
-                          shape: MaterialStateProperty.all(
-                              RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20),
-                                  side:
-                                      BorderSide(color: Colors.transparent)))),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          value.vpnConfig?.flag == null
-                              ? SizedBox.shrink()
-                              : (value.vpnConfig!.flag!
-                                      .toLowerCase()
-                                      .startsWith("http")
-                                  ? CustomImage(
-                                      url: value.vpnConfig!.flag,
-                                      height: 30,
-                                      width: 30,
-                                      fit: BoxFit.cover,
-                                      borderRadius:
-                                          BorderRadius.all(Radius.circular(20)),
-                                    )
-                                  : Image.asset(
-                                      "assets/icons/flags/${value.vpnConfig!.flag}.png",
-                                      height: 50,
-                                      width: 50,
-                                    )),
-                          RowDivider(),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                value.vpnConfig?.name ?? "Select server...",
-                                style: TextStyle(color: Colors.white),
-                              ),
-                              Padding(
-                                  padding: const EdgeInsets.only(left: 5),
-                                  child: (value.vpnConfig?.name ??
-                                              "Select server...") ==
-                                          'CZ_NEW'
-                                      ? Row(
-                                          children: [
-                                            Icon(
-                                              Icons.wifi,
-                                              size: 20,
-                                              color: Colors.green[400]!
-                                                  .withOpacity(0.7),
-                                            ),
-                                            Text(
-                                              '120 ms',
-                                              style: TextStyle(
-                                                  color: Colors.white38),
-                                            )
-                                          ],
-                                        )
-                                      : null)
-                            ],
-                          ),
-                          Expanded(child: RowDivider()),
-                          Consumer<VpnProvider>(
-                            builder: (context, value, child) => Text(
-                              value.vpnConfig?.protocol?.toUpperCase() ?? "",
-                              style: TextStyle(color: Colors.white),
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.only(
+          topRight: Radius.circular(40),
+          topLeft: Radius.circular(40),
+        ),
+        color: HexColor('221953'),
+      ),
+      child: CustomCard(
+        isCircle: true,
+        backgroundColor: Colors.white.withOpacity(1),
+        child: Stack(
+          children: [
+            Padding(
+                padding: EdgeInsets.only(top: 15, left: 0, right: 0),
+                child: dragstarted
+                    ? Padding(
+                        padding: const EdgeInsets.only(
+                            top: 15, right: 30, left: 140),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Server Lists',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.w700),
                             ),
+                            RotatedBox(
+                              quarterTurns: 1,
+                              child: Icon(
+                                Icons.arrow_forward_ios,
+                                color: Colors.deepPurple[400],
+                              ),
+                            )
+                          ],
+                        ),
+                      )
+                    : Consumer<VpnProvider>(
+                        builder: (context, value, child) => SizedBox(
+                          height: 60,
+                          child: TextButton(
+                            style: ButtonStyle(
+                                // TODO:
+                                backgroundColor: MaterialStateProperty.all(
+                                    Colors.transparent),
+                                shape: MaterialStateProperty.all(
+                                    RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(20),
+                                        side: BorderSide(
+                                            color: Colors.transparent)))),
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                value.vpnConfig?.flag == null
+                                    ? SizedBox.shrink()
+                                    : (value.vpnConfig!.flag!
+                                            .toLowerCase()
+                                            .startsWith("http")
+                                        ? Container(
+                                          decoration: BoxDecoration(
+                                              color: Colors.red,
+                                              shape: BoxShape.circle),
+                                          child: CustomImage(
+                                            height: 60,
+                                            width: 60,
+                                            url: value.vpnConfig!.flag,
+                                            fit: BoxFit.cover,
+                                          ),
+                                        )
+                                        : Container(
+                                            decoration: BoxDecoration(
+                                                color: Colors.red,
+                                                borderRadius:
+                                                    BorderRadius.circular(20)),
+                                            child: Image.asset(
+                                              "assets/icons/flags/${value.vpnConfig!.flag}.png",
+                                              height: 50,
+                                              width: 50,
+                                            ),
+                                          )),
+                                RowDivider(),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      value.vpnConfig?.name ??
+                                          "Select server...",
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                    Padding(
+                                        padding: const EdgeInsets.only(left: 0),
+                                        child: (value.vpnConfig?.name ??
+                                                    "Select server...") !=
+                                                "Select server..."
+                                            ? Row(
+                                                children: [
+                                                  Icon(
+                                                    Icons.wifi,
+                                                    size: 20,
+                                                    color: Colors.green[400]!
+                                                        .withOpacity(0.7),
+                                                  ),
+                                                  Text(
+                                                    '120 ms',
+                                                    style: TextStyle(
+                                                        color: Colors.white38),
+                                                  )
+                                                ],
+                                              )
+                                            : null)
+                                  ],
+                                ),
+                                Expanded(child: RowDivider()),
+                                RotatedBox(
+                                  quarterTurns: 3,
+                                  child: Icon(
+                                    Icons.arrow_forward_ios,
+                                    color: Colors.deepPurple[400],
+                                  ),
+                                )
+                              ],
+                            ),
+                            onPressed: () {
+                              BerandaPage.changeLocationClick(context);
+                            },
                           ),
-                        ],
-                      ),
-                      onPressed: () {
-                        BerandaPage.changeLocationClick(context);
-                      },
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
+                        ),
+                      )),
+          ],
+        ),
       ),
     );
   }

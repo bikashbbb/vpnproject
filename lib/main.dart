@@ -14,14 +14,9 @@ import 'core/provider/adsProvider.dart';
 import 'core/provider/purchaseProvider.dart';
 import 'core/provider/uiProvider.dart';
 import 'core/provider/vpnProvider.dart';
-import 'core/resources/environment.dart';
 import 'core/resources/warna.dart';
 import 'ui/screens/mainScreen.dart';
 import 'ui/screens/privacyPolicyScreen.dart';
-
-/* DecorationImage(
-                  fit: BoxFit.cover,
-                  image: AssetImage('assets/images/Group 18.png')),*/
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Provider.debugCheckInvalidValueType = null;
@@ -99,6 +94,13 @@ class RootState extends State<Root> {
         debugShowCheckedModeBanner: false,
         locale: context.locale,
         theme: ThemeData(
+            checkboxTheme: Theme.of(context).checkboxTheme.copyWith(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                side: BorderSide(
+                    width: 2, color: Colors.white38),
+                splashRadius: 0),
             primaryColor: primaryColor,
             fontFamily: GoogleFonts.poppins().fontFamily,
             scaffoldBackgroundColor: Colors.white,

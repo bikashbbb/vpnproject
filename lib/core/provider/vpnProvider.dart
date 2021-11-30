@@ -41,13 +41,19 @@ class VpnProvider extends ChangeNotifier {
     vpnStageStream.cancel();
   }
 
+  String? getVPnstage() {
+    return _vpnStage;
+  }
+
   ///Refresh everything (Pro status, VPNStage and VPN Servers)
-  static Future<void> refreshInfoVPN(BuildContext context, [String? stage]) async {
+  static Future<void> refreshInfoVPN(BuildContext context,
+      [String? stage]) async {
     VpnProvider vpnProvider = VpnProvider.instance(context);
     if (vpnProvider.vpnConfig == null) {
       await Preferences.init().then((pref) async {
         if (pref.vpnToken != null) {
-          var resp = await vpnProvider.setConfig(context, pref.vpnToken, pref.protocol);
+          var resp = await vpnProvider.setConfig(
+              context, pref.vpnToken, pref.protocol);
           if (resp != null) {
             if ((resp.status ?? 0) == 1 && !vpnProvider.isPro) {
               if (vpnProvider.isConnected ?? false) {
@@ -100,8 +106,10 @@ class VpnProvider extends ChangeNotifier {
   }
 
   ///Set VPNConfig that taken from Server by Slug
-  Future<VpnConfig?> setConfig(BuildContext context, String? slug, String? protocol) async {
-    var resp = await VpnServerHttp(context).detailVpn(VpnServer(slug: slug, protocol: protocol));
+  Future<VpnConfig?> setConfig(
+      BuildContext context, String? slug, String? protocol) async {
+    var resp = await VpnServerHttp(context)
+        .detailVpn(VpnServer(slug: slug, protocol: protocol));
     if (resp != null) vpnConfig = resp;
     return resp;
   }
@@ -118,10 +126,12 @@ class VpnProvider extends ChangeNotifier {
   }
 
   ///Check if VPN is Connected
-  bool? get isConnected => (_vpnStage ?? "Disconnected").toUpperCase() == "CONNECTED";
+  bool? get isConnected =>
+      (_vpnStage ?? "Disconnected").toUpperCase() == "CONNECTED";
 
   ///Check if User is PRO
-  bool get isPro => proLimitDate != null ? DateTime.now().isBefore(proLimitDate!) : false;
+  bool get isPro =>
+      proLimitDate != null ? DateTime.now().isBefore(proLimitDate!) : false;
 
   ///Get pro limit date
   DateTime? get proLimitDate => _proLimitDate;
@@ -129,19 +139,28 @@ class VpnProvider extends ChangeNotifier {
   VpnStatus? get vpnStatus => _vpnStatus;
 
   ///Dialog to tell that user's pro subscription is expired
-  static Future renewSubs(BuildContext context, {String? title, String? message}) => NAlertDialog(
+  static Future renewSubs(BuildContext context,
+          {String? title, String? message}) =>
+      NAlertDialog(
         content: Text(message ?? "pro_expired".tr()),
         title: Text(title ?? "ops".tr()),
         actions: [
           TextButton(
-            style: ButtonStyle(shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(0)))),
+            style: ButtonStyle(
+                shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(0)))),
             child: Text("renew".tr()),
             onPressed: () {
-              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SubscriptionDetailScreen()));
+              Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => SubscriptionDetailScreen()));
             },
           ),
           TextButton(
-            style: ButtonStyle(shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(0)))),
+            style: ButtonStyle(
+                shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(0)))),
             child: Text("continue_as_free".tr()),
             onPressed: () {
               VpnProvider vpnProvider = VpnProvider.instance(context);
@@ -152,5 +171,6 @@ class VpnProvider extends ChangeNotifier {
         ],
       ).show(context);
 
-  static VpnProvider instance(BuildContext context) => Provider.of(context, listen: false);
+  static VpnProvider instance(BuildContext context) =>
+      Provider.of(context, listen: false);
 }

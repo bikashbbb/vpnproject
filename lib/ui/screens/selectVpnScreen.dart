@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:ndialog/ndialog.dart';
+import 'package:provider/provider.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:snapping_sheet/snapping_sheet.dart';
 
@@ -22,8 +23,14 @@ import 'subscriptionDetailScreen.dart';
 
 class SelectVpnScreen extends StatefulWidget {
   final ScrollController? scrollController;
+  bool buttononly;
+  bool serveronly;
 
-  const SelectVpnScreen({Key? key, @required this.scrollController})
+  SelectVpnScreen(
+      {Key? key,
+      @required this.scrollController,
+      this.buttononly = false,
+      this.serveronly = false})
       : super(key: key);
   @override
   _SelectVpnScreenState createState() => _SelectVpnScreenState();
@@ -45,90 +52,18 @@ class _SelectVpnScreenState extends State<SelectVpnScreen>
     super.build(context);
     return NestedScrollView(
       controller: widget.scrollController,
-      headerSliverBuilder: (context, innerBoxIsScrolled) => [
-        SliverToBoxAdapter(
-          child: Padding(
-            padding:
-                const EdgeInsets.only(left: 15, right: 15, bottom: 15, top: 20),
-            child:
-                // TODO:HERE
-                Row(
-              children: [
-                Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      pageController.animateToPage(0,
-                          duration: Duration(milliseconds: 500),
-                          curve: Curves.easeInOut);
-                      setState(() {
-                        _page = 0;
-                      });
-                    },
-                    child: ClipPath(
-                      clipper: LeftButtonShape(),
-                      child: Container(
-                        height: 40,
-                        alignment: Alignment.centerLeft,
-                        decoration: BoxDecoration(
-                          color: _page == 0
-                              ? Colors.white
-                              : Colors.black.withOpacity(.1),
-                          gradient: _page == 0
-                              ? LinearGradient(
-                                  colors: [primaryColor, accentColor])
-                              : null,
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        padding: EdgeInsets.symmetric(horizontal: 20),
-                        child: FittedBox(
-                            child: Text("free_server".tr(),
-                                style: TextStyle(color: Colors.white))),
-                      ),
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      pageController.animateToPage(1,
-                          duration: Duration(milliseconds: 500),
-                          curve: Curves.easeInOut);
-                      setState(() {
-                        _page = 1;
-                      });
-                    },
-                    child: ClipPath(
-                      clipper: RightButtonShape(),
-                      child: InkWell(
-                        child: Container(
-                          height: 40,
-                          decoration: BoxDecoration(
-                            color: _page == 1
-                                ? Colors.white
-                                : Colors.black.withOpacity(.1),
-                            gradient: _page == 1
-                                ? LinearGradient(
-                                    colors: [primaryColor, accentColor])
-                                : null,
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          alignment: Alignment.centerRight,
-                          padding: EdgeInsets.symmetric(horizontal: 20),
-                          child: FittedBox(
-                              child: Text("pro_server".tr(),
-                                  style: TextStyle(color: Colors.white))),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ],
+      headerSliverBuilder: (context, innerBoxIsScrolled) => [],
       body: Column(
         children: [
+          Flexible(
+            child: Padding(
+                padding: const EdgeInsets.only(
+                    left: 15, right: 15, bottom: 15, top: 0),
+                child: buttons()
+                // TODO:HERE
+
+                ),
+          ),
           Expanded(
             child: PageView(
               controller: pageController,
@@ -148,9 +83,81 @@ class _SelectVpnScreenState extends State<SelectVpnScreen>
                     scrollController: widget.scrollController),
               ],
             ),
-          ),
+          )
         ],
       ),
+    );
+  }
+
+  Widget buttons() {
+    return Row(
+      children: [
+        Expanded(
+          child: GestureDetector(
+            onTap: () {
+              pageController.animateToPage(0,
+                  duration: Duration(milliseconds: 500),
+                  curve: Curves.easeInOut);
+              setState(() {
+                _page = 0;
+              });
+            },
+            child: ClipPath(
+              clipper: LeftButtonShape(),
+              child: Container(
+                height: 40,
+                alignment: Alignment.centerLeft,
+                decoration: BoxDecoration(
+                  color:
+                      _page == 0 ? Colors.white : Colors.black.withOpacity(.1),
+                  gradient: _page == 0
+                      ? LinearGradient(colors: [primaryColor, accentColor])
+                      : null,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                padding: EdgeInsets.symmetric(horizontal: 20),
+                child: FittedBox(
+                    child: Text("free_server".tr(),
+                        style: TextStyle(color: Colors.white))),
+              ),
+            ),
+          ),
+        ),
+        Expanded(
+          child: GestureDetector(
+            onTap: () {
+              pageController.animateToPage(1,
+                  duration: Duration(milliseconds: 500),
+                  curve: Curves.easeInOut);
+              setState(() {
+                _page = 1;
+              });
+            },
+            child: ClipPath(
+              clipper: RightButtonShape(),
+              child: InkWell(
+                child: Container(
+                  height: 40,
+                  decoration: BoxDecoration(
+                    color: _page == 1
+                        ? Colors.white
+                        : Colors.black.withOpacity(.1),
+                    gradient: _page == 1
+                        ? LinearGradient(colors: [primaryColor, accentColor])
+                        : null,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  alignment: Alignment.centerRight,
+                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  child: FittedBox(
+                      child: Text("pro_server".tr(),
+                          style: TextStyle(color: Colors.white))),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 
@@ -360,7 +367,15 @@ class _VpnServerButtonState extends State<VpnServerButton> {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 5),
-      child: _vpnButtonWidget(context),
+      child: Column(
+        children: [
+          _vpnButtonWidget(context),
+          Divider(
+            height: 3,
+            color: Colors.white24,
+          )
+        ],
+      ),
     );
   }
 
@@ -368,33 +383,27 @@ class _VpnServerButtonState extends State<VpnServerButton> {
     bool active = ((VpnProvider.instance(context).vpnConfig?.id ?? 0) ==
         widget.vpnServer!.id);
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 5),
+      height: 60,
       child: TextButton(
         onPressed: () => _vpnSelectClick(context),
         style: ButtonStyle(
-          overlayColor: MaterialStateProperty.all(primaryColor.withOpacity(.4)),
           padding: MaterialStateProperty.all(
-              EdgeInsets.symmetric(vertical: 10, horizontal: 15)),
-          backgroundColor: MaterialStateProperty.all(
-              active ? primaryColor.withOpacity(.2) : Colors.transparent),
-          shape: MaterialStateProperty.all(
-            RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10),
-              side: BorderSide(
-                  color: active ? Colors.transparent : Colors.grey.shade200),
-            ),
-          ),
+              EdgeInsets.symmetric(vertical: 10, horizontal: 0)),
         ),
         child: Row(
           children: [
             widget.vpnServer?.flag == null
                 ? SizedBox.shrink()
                 : (widget.vpnServer!.flag!.toLowerCase().startsWith("http")
-                    ? CustomImage(
-                        url: widget.vpnServer!.flag,
-                        height: 30,
-                        width: 30,
-                        fit: BoxFit.scaleDown,
+                    ? Container(
+                        height: 60,
+                        width: 60,
+                        decoration: BoxDecoration(
+                            color: Colors.white, shape: BoxShape.circle),
+                        child: CustomImage(
+                          url: widget.vpnServer!.flag,
+                          fit: BoxFit.cover,
+                        ),
                       )
                     : Image.asset(
                         "assets/icons/flags/${widget.vpnServer!.flag}.png",
@@ -403,21 +412,40 @@ class _VpnServerButtonState extends State<VpnServerButton> {
                       )),
             RowDivider(),
             Expanded(
-                child: Text(
-              widget.vpnServer?.name ?? "Select server...",
-              style: TextStyle(color: Colors.white),
-            )),
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 5, vertical: 3),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(5),
-                color: primaryColor,
-              ),
-              child: Text(
-                (widget.vpnServer?.protocol ?? "UDP").toUpperCase(),
-                style: TextStyle(color: Colors.white),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Expanded(
+                    child: Text(
+                      widget.vpnServer?.name ?? "Select server...",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.wifi,
+                        color: Colors.green.withOpacity(0.9),
+                      ),
+                      Text(
+                        '  120 ms',
+                        style: TextStyle(color: Colors.white60),
+                      )
+                    ],
+                  )
+                ],
               ),
             ),
+            active
+                ? IconButton(
+                    onPressed: () {},
+                    icon: Icon(Icons.check_circle),
+                    color: Colors.green,
+                  )
+                : Checkbox(
+                    activeColor: Colors.greenAccent[400],
+                    value: active,
+                    onChanged: (onChanged) {}),
             widget.vpnServer!.status == 1
                 ? Container(
                     child: Image.asset(

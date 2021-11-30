@@ -1,9 +1,9 @@
-
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:in_app_review/in_app_review.dart';
 import 'package:in_app_update/in_app_update.dart';
 import 'package:ndialog/ndialog.dart';
+import 'package:nizvpn/ui/page/privacy.dart';
 import 'package:nizvpn/ui/page/sharePage.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -261,7 +261,8 @@ class PengaturanPage extends StatelessWidget {
   }
 
   void _privacyPolicyClick(context) {
-    launch("https://nerdvpn.laskarmedia.id/privacy-policy-2/");
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => PrivacyPolicy()));
   }
 
   void _aboutClick(context) {

@@ -22,15 +22,17 @@ class CustomCard extends StatelessWidget {
   final BoxShadow? shadow;
   final Color? backgroundColor;
   final double? radius;
+  bool isCircle;
 
-  const CustomCard(
+  CustomCard(
       {Key? key,
       this.margin,
       this.padding,
       this.shadow,
       this.backgroundColor,
       this.child,
-      this.radius})
+      this.radius,
+      this.isCircle = false})
       : super(key: key);
 
   @override
@@ -47,7 +49,12 @@ class CustomCard extends StatelessWidget {
       ),
       decoration: BoxDecoration(
         color: HexColor('221953'),
-        borderRadius: BorderRadius.circular(radius ?? 10),
+        borderRadius: isCircle
+            ? BorderRadius.only(
+                topRight: Radius.circular(40),
+                topLeft: Radius.circular(40),
+              )
+            : BorderRadius.circular(radius ?? 10),
         boxShadow: [
           shadow ??
               BoxShadow(

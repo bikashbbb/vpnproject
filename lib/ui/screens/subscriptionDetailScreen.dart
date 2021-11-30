@@ -104,27 +104,59 @@ class _SubscriptionDetailScreenState extends State<SubscriptionDetailScreen> {
           children: [
             Positioned(
               top: height * 0.74,
-              left: width * 0.13,
+              left: width * 0.12,
+              right: width * 0.12,
               child: Container(
                   decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(20)),
                     image: DecorationImage(
                         image: AssetImage(
                           'assets/images/Rectangle 90.png',
                         ),
                         fit: BoxFit.cover),
                   ),
-                  height: height * 0.05,
-                  width: width - 100,
+                  height: height * 0.06,
+                  width: width - 50,
                   child: Center(
                     child: Text("Start",
                         style: TextStyle(fontSize: 20, color: Colors.white)),
                   )),
             ),
             Positioned(
-              bottom: height * 0.26,
-              left: 0,
-              right: 0,
-              child: Image.asset('assets/images/Group 83.png'),
+              bottom: height * 0.28,
+              left: width * 0.12,
+              right: width * 0.12,
+              child: Container(
+                decoration: BoxDecoration(
+                    border: Border.all(color: Colors.purple),
+                    color: Colors.black.withOpacity(0.7),
+                    borderRadius: BorderRadius.circular(20)),
+                height: height * 0.12,
+                child: Column(
+                  children: [
+                    Text(
+                      'Weekly',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 24),
+                    ),
+                    Text(
+                      '(The first 3 days are free)',
+                      style: TextStyle(color: Colors.white, fontSize: 16),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(top: height * 0.015),
+                      child: Text(
+                        'Automatically renews 699.00 rub/week',
+                        style: TextStyle(
+                          color: Colors.white70,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ), /* Image.asset('assets/images/Group 83.png'), */
             ),
             Container(
               child: SafeArea(
