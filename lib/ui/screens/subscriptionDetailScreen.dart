@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:line_icons/line_icons.dart';
 //import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
@@ -59,12 +60,6 @@ class _SubscriptionDetailScreenState extends State<SubscriptionDetailScreen> {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      /*  LottieBuilder.asset(
-                        "assets/animations/crown.json",
-                        height: 150,
-                        width: 150,
-                        fit: BoxFit.contain,
-                      ),*/
                       ColumnDivider(),
                       Text(
                         "great".tr(),
@@ -103,6 +98,83 @@ class _SubscriptionDetailScreenState extends State<SubscriptionDetailScreen> {
           alignment: Alignment.center,
           children: [
             Positioned(
+                top: height * 0.28,
+                child: Text('The first 3 days are'.tr().toUpperCase(),
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w700))),
+            Positioned(
+                top: height * 0.28,
+                child: Text('FREE'.tr(),
+                    style: GoogleFonts.bowlbyOne(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 70))),
+            Positioned(
+                top: height * 0.4,
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Column(
+                      children: [
+                        Image.asset('assets/images/Group 80(1).png'),
+                        Divider(
+                          height: height * 0.02,
+                        ),
+                        Text(
+                          '   Personal\n        data \n  protection'
+                              .tr()
+                              .toUpperCase(),
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold),
+                        )
+                      ],
+                    ),
+                    Container(
+                      width: width * 0.04,
+                    ),
+                    Column(
+                      children: [
+                        Image.asset('assets/images/Group 81.png'),
+                        Divider(
+                          height: height * 0.02,
+                        ),
+                        Text(
+                          'Maximum \n   speed'.tr().toUpperCase(),
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold),
+                        )
+                      ],
+                    ),
+                    Container(
+                      width: width * 0.04,
+                    ),
+                    Column(
+                      children: [
+                        Image.asset('assets/images/shield 1 (Traced).png'),
+                        Divider(
+                          height: height * 0.02,
+                        ),
+                        Text(
+                          ' Protection \nof internet \n    surfing'
+                              .tr()
+                              .toUpperCase(),
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold),
+                        )
+                      ],
+                    )
+                  ],
+                )),
+            Positioned(
               top: height * 0.74,
               left: width * 0.12,
               right: width * 0.12,
@@ -118,7 +190,7 @@ class _SubscriptionDetailScreenState extends State<SubscriptionDetailScreen> {
                   height: height * 0.06,
                   width: width - 50,
                   child: Center(
-                    child: Text("Start",
+                    child: Text("Start".tr(),
                         style: TextStyle(fontSize: 20, color: Colors.white)),
                   )),
             ),
@@ -135,20 +207,20 @@ class _SubscriptionDetailScreenState extends State<SubscriptionDetailScreen> {
                 child: Column(
                   children: [
                     Text(
-                      'Weekly',
+                      'WEEKLY'.tr(),
                       style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
                           fontSize: 24),
                     ),
                     Text(
-                      '(The first 3 days are free)',
+                      '(The first 3 days are free)'.tr(),
                       style: TextStyle(color: Colors.white, fontSize: 16),
                     ),
                     Padding(
                       padding: EdgeInsets.only(top: height * 0.015),
                       child: Text(
-                        'Automatically renews 699.00 rub/week',
+                        'Automatically renews 699.00 rub/week'.tr(),
                         style: TextStyle(
                           color: Colors.white70,
                         ),
@@ -156,8 +228,23 @@ class _SubscriptionDetailScreenState extends State<SubscriptionDetailScreen> {
                     )
                   ],
                 ),
-              ), /* Image.asset('assets/images/Group 83.png'), */
+              ),
             ),
+            Positioned(
+                bottom: height * 0.16,
+                child: Text(
+                  'Restore purchase'.tr(),
+                  style: TextStyle(color: Colors.white70, fontSize: 16),
+                )),
+            Padding(
+                padding: EdgeInsets.only(top: height * 0.8),
+                child: Container(
+                  child: Text(
+                    '    For more info see Privacy police and Terms and conditions. GUARD VPN \n   Premium Subscription: Free 7-day Trial. Lenght of subscription: 1 week free  \n    then monthly subscription: access to Virtual Locations, higer connection\n         speed ,and priority support. Price of subscription: Free Trial - first'
+                        .tr(),
+                    style: TextStyle(color: Colors.white60, fontSize: 10),
+                  ),
+                )),
             Container(
               child: SafeArea(
                 child: Column(

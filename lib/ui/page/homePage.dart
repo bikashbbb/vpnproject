@@ -84,7 +84,7 @@ class _BerandaPageState extends State<BerandaPage> {
               return object.getVPnstage() == "disconnected" ||
                       object.getVPnstage() == "DISCONNECTED"
                   ? Text(
-                      'Tap the button to connect',
+                      'Tap the button to connect'.tr(),
                       style: TextStyle(color: Colors.blue, fontSize: 16),
                     )
                   : SizedBox();
@@ -252,19 +252,24 @@ class _BerandaPageState extends State<BerandaPage> {
   Widget _connectButtonWidget() {
     return Consumer<VpnProvider>(
       builder: (context, value, child) {
+        String info;
         var image = NerdVPNIcon.power;
         // Color focusColor = greyLittleWhite;
 
         String stage = (value.vpnStage ?? NVPN.vpnDisconnected).toLowerCase();
         if (stage == NVPN.vpnConnected.toLowerCase()) {
-          image = AssetImage('assets/images/Group 18(3).png');
+          image = AssetImage('assets/images/Group 18(2).png');
+          info = 'STOP';
         } else if (stage != NVPN.vpnDisconnected.toLowerCase() || stage == "") {
           image = AssetImage('assets/images/Group 18(1).png');
+          info = 'CONNECTING';
         } else {
           image = AssetImage('assets/images/Group 18.png');
+          info = 'START';
         }
         return Center(
           child: Container(
+            alignment: Alignment(0, 0.3),
             height: 200,
             width: 200,
             decoration: BoxDecoration(
@@ -278,7 +283,13 @@ class _BerandaPageState extends State<BerandaPage> {
                 onPressed: () {
                   _connectVPNClick(value);
                 },
-                child: Text('')),
+                child: Text(
+                  info.tr(),
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 20),
+                )),
           ),
         );
       },
