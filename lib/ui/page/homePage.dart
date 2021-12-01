@@ -268,28 +268,28 @@ class _BerandaPageState extends State<BerandaPage> {
           info = 'START';
         }
         return Center(
-          child: Container(
-            alignment: Alignment(0, 0.3),
-            height: 200,
-            width: 200,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: image,
+          child: InkWell(
+            onTap: () {
+              _connectVPNClick(value);
+            },
+            child: Container(
+              alignment: Alignment(0, 0.3),
+              //height: 200,
+              //width: 200,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: image,
+                ),
+                shape: BoxShape.circle,
               ),
-              shape: BoxShape.circle,
+              child: Text(
+                info.tr(),
+                style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w500,
+                    fontSize: 20),
+              ),
             ),
-            child: TextButton(
-                // focusColor: focusColor,
-                onPressed: () {
-                  _connectVPNClick(value);
-                },
-                child: Text(
-                  info.tr(),
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w500,
-                      fontSize: 20),
-                )),
           ),
         );
       },
